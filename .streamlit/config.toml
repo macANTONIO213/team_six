@@ -1,0 +1,15 @@
+[server]
+headless = true
+port = 8501
+maxUploadSize = 5
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#7c3aed"
+
+[client]
+toolbarMode = "viewer"

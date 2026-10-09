@@ -1,0 +1,35 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadArgusReleasesAndData",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::__BUCKET__/*"
+    },
+    {
+      "Sid": "ListArgusBucket",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::__BUCKET__"
+    },
+    {
+      "Sid": "InvokeClaudeViaAustralianInferenceProfiles",
+      "Effect": "Allow",
+      "Action": ["bedrock:InvokeModel", "bedrock:InvokeModelWithResponseStream"],
+      "Resource": [
+        "arn:aws:bedrock:__REGION__:__ACCOUNT__:inference-profile/au.anthropic.claude-sonnet-4-6",
+        "arn:aws:bedrock:__REGION__:__ACCOUNT__:inference-profile/au.anthropic.claude-haiku-4-5-20251001-v1:0"
+      ]
+    },
+    {
+      "Sid": "InvokeUnderlyingClaudeModels",
+      "Effect": "Allow",
+      "Action": ["bedrock:InvokeModel", "bedrock:InvokeModelWithResponseStream"],
+      "Resource": [
+        "arn:aws:bedrock:*::foundation-model/anthropic.claude-sonnet-4-6",
+        "arn:aws:bedrock:*::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0"
+      ]
+    }
+  ]
+}

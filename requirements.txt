@@ -1,0 +1,16 @@
+# ARGUS runtime dependencies (versions verified on Python 3.14 locally and 3.12 on EC2)
+streamlit==1.65.0
+duckdb==1.5.6
+pandas==3.0.6
+pyarrow==25.0.1
+numpy==2.5.3
+networkx==3.7
+scikit-learn==1.9.1
+joblib==1.6.0
+plotly==7.1.0
+pyvis==0.3.2
+rapidfuzz==3.14.6
+boto3==1.43.110
+pytest==9.1.1
+# Local development only, for 'aws login' credentials (EC2 uses its instance role):
+#   pip install "botocore[crt]"
